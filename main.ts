@@ -221,10 +221,10 @@ thrustSprite = sprites.create(img`
 `, SpriteKind.ThurstKind)
 thrustSprite.setFlag(SpriteFlag.Ghost, true)
 game.onUpdate(function () {
+    thrustSprite.setPosition(mySprite.x, mySprite.y)
+})
+game.onUpdate(function () {
     if (controller.left.isPressed() || controller.right.isPressed() || controller.down.isPressed()) {
         info.changeLifeBy(-1)
     }
-})
-game.onUpdate(function () {
-    thrustSprite.setPosition(mySprite.x, mySprite.y)
 })
